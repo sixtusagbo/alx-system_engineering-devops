@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+# Displays content of directory in a particular format
+
+for i in *;do
+	echo "$i" | cut -d "-" -f 2-
+done
