@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+# Parse Apache logs
+# Format: IP HTTP_CODE
+
+awk '{print $1, $9}' apache-access.log
