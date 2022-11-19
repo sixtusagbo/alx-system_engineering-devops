@@ -1,6 +1,5 @@
 #!/usr/bin/env bash
 # Manipulate process and pid file
-. /lib/lsb/init-functions
 
 PIDFILE=/var/run/my_process.pid
 
@@ -28,7 +27,7 @@ case "$1" in
        echo "manage_my_process restarted"
        ;;
     *)
-       echo "Usage: `basename $0` {start|stop|restart}"
+       echo "Usage: manage_my_process {start|stop|restart}"
 esac
 
 exit 0
