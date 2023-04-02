@@ -11,17 +11,19 @@ from sys import argv
 
 def fetch_data(id):
     req = requests.get("https://jsonplaceholder.typicode.com/users/{}"
-                        .format(id))
+                       .format(id))
     user = req.json()
     info = "Employee {} is done with tasks".format(user["name"])
 
     req = requests.get("https://jsonplaceholder.typicode.com/users/{}/todos"
-                         .format(id))
+                       .format(id))
     todos = req.json()
     info += "({}/{}):".format(
-                        sum(1 for todo in todos if todo["completed"]), len(todos))
+                        sum(1 for todo in todos if todo["completed"]),
+                        len(todos))
     for todo in todos:
-        info += "\n\t {}".format(todo["title"])
+        if todo["completed"]:
+            info += "\n\t {}".format(todo["title"])
     print(info)
 
 
