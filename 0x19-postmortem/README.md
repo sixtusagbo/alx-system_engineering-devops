@@ -1,6 +1,8 @@
 # Postmortem
 *DevOps* *SysAdmin*
 
+![Debugging Mindset](debugging.jpg)
+
 This postmortem is about service outage from 17:18 April 29, 2023 (Africa/Lagos, GMT+1) to 17:40 April 29, 2023 (Africa/Lagos, GMT+1) on an aplication server from which I served a [Laravel](https://laravel.com) application.
 
 The server was returning a 500 (Internal server error) response.
