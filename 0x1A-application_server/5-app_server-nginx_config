@@ -61,7 +61,7 @@ server {
 
 	location /airbnb-onepage/ {
 		include proxy_params;
-		proxy_pass http://0.0.0.0:5000/airbnb-onepage/;
+		proxy_pass http://0.0.0.0:5000;
 	}
 
 	location /airbnb-dynamic/number_odd_or_even/ {
@@ -71,12 +71,17 @@ server {
 
 	location /api/ {
 		include proxy_params;
-		proxy_pass http://0.0.0.0:5002/api/;
+		proxy_pass http://0.0.0.0:5002;
+	}
+
+	location /static {
+		include proxy_params;
+		proxy_pass http://0.0.0.0:5003;
 	}
 
 	location / {
 		include proxy_params;
-		proxy_pass http://0.0.0.0:5003/;
+		proxy_pass http://0.0.0.0:5003/2-hbnb;
 		# First attempt to serve request as file, then
 		# as directory, then fall back to displaying a 404.
 		#try_files $uri $uri/ =404;
